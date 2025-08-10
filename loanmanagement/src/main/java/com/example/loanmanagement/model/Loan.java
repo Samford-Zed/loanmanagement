@@ -6,14 +6,13 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Loan {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

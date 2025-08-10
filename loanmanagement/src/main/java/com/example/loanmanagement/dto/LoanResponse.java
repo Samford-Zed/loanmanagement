@@ -9,7 +9,7 @@ public class LoanResponse {
     private Long id;
     private Double amount;
     private String loanType;
-    private Integer durationMonths;
+    private Integer tenureMonths;
     private String purpose;
     private Double annualIncome;
     private String status;
