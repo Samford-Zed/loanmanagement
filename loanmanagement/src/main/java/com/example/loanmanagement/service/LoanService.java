@@ -39,7 +39,7 @@ public class LoanService {
         loan.setEmi(emi.doubleValue());
         loanRepository.save(loan);
 
-        // Generate due dates
+        // Generate due dates    sami this testdf
         List<LocalDate> dueDates = DateUtil.generateDueDates(
                 loan.getStartDate(),
                 loan.getTenureMonths()
