@@ -22,10 +22,8 @@ public class LoanService {
     private final RepaymentRepository repaymentRepository;
 
     public Loan createLoanWithRepayments(Loan loanRequest) {
-        // Save the loan first
         Loan loan = loanRepository.save(loanRequest);
 
-        // Calculate EMI - add check for annualInterestRate being present
         if (loan.getAnnualInterestRate() == null || loan.getTenureMonths() == null) {
             throw new IllegalArgumentException("Annual Interest Rate and Duration must be provided");
         }
@@ -39,18 +37,16 @@ public class LoanService {
         loan.setEmi(emi.doubleValue());
         loanRepository.save(loan);
 
-        // Generate due dates    sami this testdf
         List<LocalDate> dueDates = DateUtil.generateDueDates(
                 loan.getStartDate(),
                 loan.getTenureMonths()
         );
 
-        // Create repayment entries
         List<Repayment> repayments = new ArrayList<>();
         double monthlyRate = (loan.getAnnualInterestRate() / 100) / 12;
 
         for (LocalDate dueDate : dueDates) {
-            double interest = loan.getAmount() * monthlyRate; // simple interest approximation per month
+            double interest = loan.getAmount() * monthlyRate; // simple interest per month
             double principal = emi.doubleValue() - interest;
 
             Repayment repayment = new Repayment();
@@ -74,13 +70,6 @@ public class LoanService {
     }
 
     public List<Repayment> getRepayments(Long loanId) {
-        // Option A: Add findByLoanId to RepaymentRepository and use it here
         return repaymentRepository.findByLoanId(loanId);
-        // Or Option B: fetch loan and find by loan object
-        /*
-        Loan loan = loanRepository.findById(loanId)
-                .orElseThrow(() -> new RuntimeException("Loan not found"));
-        return repaymentRepository.findByLoan(loan);
-        */
     }
 }
