@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: lone-spring-boot-db # Renamed for clarity, as this is the DB container
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: sami
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: lone # <--- ADDED: Specifies the database name
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5334:5432" # Host port 5334 maps to container port 5432
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
