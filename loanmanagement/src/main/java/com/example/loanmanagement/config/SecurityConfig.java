@@ -13,7 +13,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+<<<<<<< HEAD
 //jnjnkmlk,l
+=======
+//this dagaga from hawasa
+//segni blala
+>>>>>>> 6b36b7d5e253f3f7c58ec72f94901283ba15629d
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
