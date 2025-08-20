@@ -1,8 +1,8 @@
-LoanMS — Loan Management System
+                                                               LoanMS — Loan Management System
 
 A sleek, role-based Loan Management System for banks and MFIs. Customers can apply for loans and track EMI schedules. Admins can review applications, approve/reject, mark repayments as paid, and view customers — all with a modern React UI and a secure Spring Boot API.
 
-✨ Highlights
+                                                                     ✨ Highlights
 
 Modern UI: React + Vite + Tailwind for a fast, clean, responsive interface
 
@@ -20,7 +20,7 @@ Clean Domain: JPA entities for User, Loan, Repayment + repositories & services
 
 DX-Friendly: Simple local setup, clear endpoints, and friendly error messages
 
-🧱 Tech Stack
+                                                                  🧱 Tech Stack
 
 Frontend
 
@@ -42,7 +42,7 @@ Database: PostgreSQL (recommended) or H2 for quick dev
 
 JWT auth with filter chain
 
-🗂️ Project Structure
+                                                                     🗂️ Project Structure
 project/
 ├─ frontend/
 │  └─ src/
@@ -61,7 +61,7 @@ project/
       ├─ security/             # JwtAuthFilter, config
       └─ util/                 # EmiCalculator, DateUtil
 
-🚀 Getting Started
+                                                                  🚀 Getting Started
 1) Backend (Spring Boot)
 
 Prereqs: JDK 17+, Maven, PostgreSQL (or use H2 to try it fast)
@@ -116,7 +116,7 @@ npm run dev
 
 App at http://localhost:5173.
 
-🔐 Roles & Auth
+                                                                  🔐 Roles & Auth
 
 CUSTOMER: /app — apply for loans, list “My Loans”, repayment schedule, profile
 
@@ -165,7 +165,7 @@ Admin: Loan Applications, Customers, Reports, Settings
 
 Customer: Apply Loan, My Loans, Payments / Repayment Schedule, Profile
 
-🧮 EMI & Schedule
+                                                                  🧮 EMI & Schedule
 
 EMI is computed with EmiCalculator.calculateEMI(principal, annualRate, tenureMonths)
 
@@ -175,7 +175,7 @@ Each installment: principal + interest, and the Admin can mark a row PAID
 
 Customer views live totals: paid count, total paid, remaining
 
-🧭 Using the App
+                                                                  🧭 Using the App
 
 Register & Login
 
@@ -195,7 +195,7 @@ After approval, schedule is generated.
 
 Admin can mark installments PAID; Customer sees status update in “Payments”.
 
-🖼️ Screens (what you’ll see)
+                                                                     🖼️ Screens (what you’ll see)
 
 Customer Dashboard: Active loans, totals, quick access to apply & view schedules
 
@@ -207,7 +207,7 @@ Admin Dashboard: KPI cards + Applications table with actions & details modal
 
 Customers: Real list fetched from backend (no more mock!)
 
-🧪 Troubleshooting
+                                                               🧪 Troubleshooting
 
 CORS errors: Ensure app.cors.allowed-origin matches your Vite URL (usually http://localhost:5173).
 
@@ -217,7 +217,7 @@ Ports: Backend :8080, Frontend :5173. Update if you customized them.
 
 “Failed to load …”: Inspect browser Network tab; verify the endpoint exists and returns JSON.
 
-🗺️ Roadmap
+                                                                  🗺️ Roadmap
 
 Payment gateway integration
 
@@ -229,7 +229,7 @@ Multi-tenancy and audit logs
 
 Email/SMS notifications
 
-🤝 Contributing
+                                                                        🤝 Contributing
 
 PRs are welcome!
 
@@ -239,11 +239,11 @@ Add clear commit messages
 
 Include small screenshots/GIFs for UI changes
 
-📄 License
+                                                                           📄 License
 
 MIT — do as you wish, just keep the attribution.
 
-💬 Credits
+                                                                           💬 Credits
 
 Built with ♥️ using Spring Boot & React.
 Thanks to the open-source community for the incredible tooling.
